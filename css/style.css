@@ -12,20 +12,41 @@ body {
 
 h1 {
     font-size: 64px;
+    color: #253347;
 }
 
 h2 {
     font-size: 48px;
+    color: #253347;
 }
 
 h3 {
     font-size: 24px;
+    color: #253347;
 }
 
 p {
     font-size: 16px;
+    color: #5E6E85;
 }
 
+span {
+    font-weight: bold;
+}
+
+label {
+    color: #5E6E85;
+}
+
+input {
+    font-weight: bold;
+    color: #253347;
+    border: 1px solid rgba(216, 226, 231);
+    border-radius: 4px;
+    padding: 20px 24px;
+    margin-top: 8px;
+    font-size: 24px;
+}
 
 /*first section*/
 
@@ -52,7 +73,6 @@ p {
 .frame-6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: ;
     width: 564px;
     gap: 32px;
     padding: 32px;
@@ -62,18 +82,61 @@ p {
     overflow: hidden;
 }
 
-.metric-imperial  {
-    border-radius: 500%;
+.frame-6 h3 {
+    grid-column: span 2;
+    margin: 0;
+}
+
+button.metric-imperial{
+    border-radius: 50%;
+    border: 1px solid;    
+    border-color: #D8E2E7;
     width: 31px;
     height: 31px;
+    background-color: #FFFFFF;
+    cursor: pointer;
 }
 
-.metric-imperial p {
-    grid-row: 2;
-    grid-column: ;
-
+button.metric-imperial:active {
+    background-color: blue;
+    border: 8px solid #D8E2E7;    
 }
 
+
+.metric p {
+    padding-left: 18px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #253347;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+}
+
+.frame-1 {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 32px;
+    background: linear-gradient(180deg, rgb(52.38, 95.09, 246.5) 0%, rgb(88.19, 124.89, 255) 100%);
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.frame-1, h1, p {
+    color: white;
+}
+
+.BMI {
+    padding: 0;
+    margin: 0;
+}
 
 
 
