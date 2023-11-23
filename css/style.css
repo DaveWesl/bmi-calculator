@@ -1,0 +1,100 @@
+* {
+    font-family: 'Inter', sans-serif;
+    box-sizing: border-box;
+    width: 100%;    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    font-size: 64px;
+}
+
+h2 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+/*first section*/
+
+.first-section {
+    height: 100vh;
+}
+
+.game-icon {
+    height: 64px;
+    width: 64px;
+}
+
+.rectangle-6 {
+    display: none;
+    position: fixed;
+    width: 978px;
+    height: 737px;
+    top: 0;
+    left: 0;
+    border-radius: 0px 0px 35px 35px;
+    background: linear-gradient(180deg, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
+}
+
+.frame-6 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: ;
+    width: 564px;
+    gap: 32px;
+    padding: 32px;
+    position: relative;
+    background-color: var(--pure-white);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.metric-imperial  {
+    border-radius: 500%;
+    width: 31px;
+    height: 31px;
+}
+
+.metric-imperial p {
+    grid-row: 2;
+    grid-column: ;
+
+}
+
+
+
+
+
+
+
+
+/*second section*/
+
+.second-section {
+    display: none;
+}
+
+/*third section*/
+
+.third-section {
+    display: none;
+}
+
+/*fourth section*/
+
+.fourth-section {
+    display: none;
+}
