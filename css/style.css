@@ -7,7 +7,7 @@
 
 @media screen and (max-width: 768px) {
     html {
-      font-size: 9px; /* Beispiel: Reduziere die Schriftgröße für kleinere Bildschirme */
+      font-size: 8px; /* Beispiel: Reduziere die Schriftgröße für kleinere Bildschirme */
     }
 }
 
@@ -60,7 +60,7 @@ input:focus {
 /*first section*/
 
 .first-section {
-    height: 100vh;
+    height: 42rem;
 }
 
 .game-icon {
@@ -125,7 +125,8 @@ button.metric-imperial{
 
 button.metric-imperial:active {
     background-color: blue;
-    border: 0.5rem solid #D8E2E7;    
+    border: 0.5rem solid #D8E2E7;  
+    border-radius: 50% !important;  
 }
 
 
@@ -190,26 +191,85 @@ p.suggest {
     margin: 0;
 }
 
+/*image Curve */
 
-
-
-
-
+.curve {
+    width: 5rem;
+    position: absolute;
+    top: 40rem;
+    left: 73rem;
+}
 
 /*second section*/
 
 .second-section {
-    display: none;
+    display: flex;
+    flex-direction: row;
 }
 
+img.rectangle-8 {
+    width: 35.25rem;
+    margin-left: 8rem;
+}
+
+.meaning {
+    width: 32rem;
+    margin-left: 4rem;
+    padding-top: 9rem;
+}
 /*third section*/
 
 .third-section {
-    display: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 2rem;
+}
+
+.icon-1 {
+    width: 3rem;
+    height: 3rem;
+}
+
+.tipps {
+    width: 23.5rem;
+}
+
+.tipps:not(:last-child) {
+    padding-right: 2rem;
 }
 
 /*fourth section*/
 
 .fourth-section {
-    display: none;
+    display: ;
+}
+
+.frame-34 {
+    width: 35.25rem;
+}
+
+.icon-2 {
+    width: 2rem;
+    height: 2rem;
+}
+
+.frame-7 {
+    width: 20rem;
+}
+
+.icon-2-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon-2-container h3 {
+    margin-left: 1rem;
+    font-size: 1.25rem;
+}
+
+.frame-7 p {
+    margin: 0;
 }
