@@ -2,31 +2,38 @@
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
     width: 100%;    
+    font-size: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+      font-size: 9px; /* Beispiel: Reduziere die Schriftgröße für kleinere Bildschirme */
+    }
 }
 
 body {
     margin: 0;
-    padding: 0;
+    padding: 0 1.5rem 7.5rem 1.5rem;
     background-color: rgb(255, 255, 255);
 }
 
 h1 {
-    font-size: 64px;
+    font-size: 4rem;
     color: #253347;
 }
 
 h2 {
-    font-size: 48px;
+    font-size: 3rem;
     color: #253347;
 }
 
 h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     color: #253347;
 }
 
 p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #5E6E85;
 }
 
@@ -40,7 +47,7 @@ label {
 
 input {
     border: none;  
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: bold;  
     color: rgba(37, 51, 71, 1);
 }
@@ -57,31 +64,48 @@ input:focus {
 }
 
 .game-icon {
-    height: 64px;
-    width: 64px;
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+    top: 3rem;
+    left: 7.25rem;
 }
 
 .rectangle-6 {
-    display: none;
-    position: fixed;
-    width: 978px;
-    height: 737px;
+    position: relative;
+    width: 64rem;
+    height: 40rem;
     top: 0;
-    left: 0;
-    border-radius: 0px 0px 35px 35px;
-    background: linear-gradient(180deg, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
+    border-radius: 0 0 2rem 2rem;
+    background: linear-gradient(to bottom left, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
+    border-bottom-right-radius: 2rem;
+}
+
+.rectangle-6 h1 {
+    margin-top: 9rem;
+    margin-left: 7.25rem;
+    margin-bottom: 2rem;
+    margin-right: 3.125rem;
+}
+
+.rectangle-6 p {
+    margin-top: 0;
+    margin-left: 7.25rem;
 }
 
 .frame-6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 564px;
-    gap: 32px;
-    padding: 32px;
+    width: 35.25rem;
+    gap: 2rem;
+    padding: 2rem;
     position: relative;
-    background-color: var(--pure-white);
-    border-radius: 16px;
-    overflow: hidden;
+    background-color: white;
+    border-radius: 1rem;
+    top: -35rem;
+    left: 46rem;
+    z-index: 2;
+    box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
 }
 
 .frame-6 h3 {
@@ -91,24 +115,24 @@ input:focus {
 
 button.metric-imperial{
     border-radius: 50%;
-    border: 1px solid;    
+    border: 0.0625rem solid;    
     border-color: #D8E2E7;
-    width: 31px;
-    height: 31px;
+    width: 2rem;
+    height: 2rem;
     background-color: #FFFFFF;
     cursor: pointer;
 }
 
 button.metric-imperial:active {
     background-color: blue;
-    border: 8px solid #D8E2E7;    
+    border: 0.5rem solid #D8E2E7;    
 }
 
 
 .metric p {
-    padding-left: 18px;
+    padding-left: 1.125rem;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     color: #253347;
 }
 
@@ -119,12 +143,12 @@ button.metric-imperial:active {
 
 .input-infos {
     font-weight: bold;
-    border: 1px solid rgba(216, 226, 231);
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin-top: 8px;
+    border: 0.0625rem solid rgba(216, 226, 231);
+    border-radius: 0.625rem;
+    padding: 1.25rem 1.5rem;
+    margin-top: 0.5rem;
     color: rgba(52, 95, 246, 1);
-    font-size: 24px;
+    font-size: 1.5rem;
     display: flex;
 }
 
@@ -137,18 +161,28 @@ button.metric-imperial:active {
     grid-column: span 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    padding: 32px;
+    gap: 2rem;
+    padding: 0.5rem;
     background: linear-gradient(180deg, rgb(52.38, 95.09, 246.5) 0%, rgb(88.19, 124.89, 255) 100%);
     align-items: center;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-top-left-radius: 1.25rem;
+    border-bottom-left-radius: 1.25rem;
+    border-top-right-radius: 6.25rem;
+    border-bottom-right-radius: 6.25rem;
 }
 
-.frame-1, h1, p {
+.frame-1 h1 {
     color: white;
+    padding-left: 2rem;
+}
+
+.frame-1 p {
+    color: white;
+    padding-left: 2rem;
+}
+
+p.suggest {
+    padding-left: 0;
 }
 
 .BMI {
