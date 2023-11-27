@@ -5,15 +5,10 @@
     font-size: 16px;
 }
 
-@media screen and (max-width: 768px) {
-    html {
-      font-size: 8px; /* Beispiel: Reduziere die Schriftgröße für kleinere Bildschirme */
-    }
-}
 
 body {
     margin: 0;
-    padding: 0 1.5rem 3rem 1.5rem;
+    padding: 0 1.5rem 0rem 1.5rem;
     background-color: rgb(255, 255, 255);
 }
 
@@ -60,7 +55,8 @@ input:focus {
 /*first section*/
 
 .first-section {
-    height: 42rem;
+    height: 100vh;
+    display: flex;
 }
 
 .game-icon {
@@ -73,8 +69,7 @@ input:focus {
 
 .rectangle-6 {
     position: relative;
-    width: 64rem;
-    height: 40rem;
+    width: 75%;
     top: 0;
     border-radius: 0 0 2rem 2rem;
     background: linear-gradient(to bottom left, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
@@ -82,28 +77,29 @@ input:focus {
 }
 
 .rectangle-6 h1 {
-    margin-top: 9rem;
-    margin-left: 7.25rem;
-    margin-bottom: 2rem;
-    margin-right: 3.125rem;
+    padding: 9rem;
+    padding: 7.25rem;
+    padding-bottom: 0rem;
+    padding-right: 3.125rem;
 }
 
 .rectangle-6 p {
-    margin-top: 0;
-    margin-left: 7.25rem;
+    padding-top: 0;
+    padding-left: 7.25rem;
+    padding-bottom: 5rem;
 }
 
 .frame-6 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    width: 35.25rem;
+    width: 43%;
     gap: 2rem;
     padding: 2rem;
-    position: relative;
+    margin-left: -16rem;
+    margin-top: 8rem;
+    margin-bottom: 3rem;
     background-color: white;
     border-radius: 1rem;
-    top: -35rem;
-    left: 46rem;
     z-index: 2;
     box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
 }
@@ -191,13 +187,161 @@ p.suggest {
     margin: 0;
 }
 
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 4px;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    .first-section {
+        height: 100vh;
+        display: block;
+        text-align: center;
+    }
+    
+    .game-icon {
+        height: 4rem;
+        width: 4rem;
+    }
+    
+    .rectangle-6 {
+        width: 100%;
+        border-radius: 0 0 2rem 2rem;
+        background: linear-gradient(to bottom left, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
+        border-bottom-right-radius: 2rem;
+    }
+    
+    .rectangle-6 h1 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .rectangle-6 p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .frame-6 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 43%;
+        gap: 2rem;
+        padding: 2rem;
+        margin-left: -16rem;
+        margin-top: 8rem;
+        margin-bottom: 3rem;
+        background-color: white;
+        border-radius: 1rem;
+        z-index: 2;
+        box-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.3);
+    }
+    
+    .frame-6 h3 {
+        grid-column: span 2;
+        margin: 0;
+    }
+    
+    button.metric-imperial{
+        border-radius: 50%;
+        border: 0.0625rem solid;    
+        border-color: #D8E2E7;
+        width: 2rem;
+        height: 2rem;
+        background-color: #FFFFFF;
+        cursor: pointer;
+    }
+    
+    button.metric-imperial:active {
+        background-color: blue;
+        border: 0.5rem solid #D8E2E7;  
+        border-radius: 50% !important;  
+    }
+    
+    
+    .metric p {
+        padding-left: 1.125rem;
+        font-weight: bold;
+        font-size: 1rem;
+        color: #253347;
+    }
+    
+    .metric {
+        display: flex;
+        align-items: center;
+    }
+    
+    .input-infos {
+        font-weight: bold;
+        border: 0.0625rem solid rgba(216, 226, 231);
+        border-radius: 0.625rem;
+        padding: 1.25rem 1.5rem;
+        margin-top: 0.5rem;
+        color: rgba(52, 95, 246, 1);
+        font-size: 1.5rem;
+        display: flex;
+    }
+    
+    .input-infos h3 {
+        color: rgba(52, 95, 246, 1);
+        text-align: end;
+    }
+    
+    .frame-1 {
+        grid-column: span 2;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        padding: 0.5rem;
+        background: linear-gradient(180deg, rgb(52.38, 95.09, 246.5) 0%, rgb(88.19, 124.89, 255) 100%);
+        align-items: center;
+        border-top-left-radius: 1.25rem;
+        border-bottom-left-radius: 1.25rem;
+        border-top-right-radius: 6.25rem;
+        border-bottom-right-radius: 6.25rem;
+    }
+    
+    .frame-1 h1 {
+        color: white;
+        padding-left: 2rem;
+    }
+    
+    .frame-1 p {
+        color: white;
+        padding-left: 2rem;
+    }
+    
+    p.suggest {
+        padding-left: 0;
+    }
+    
+    .BMI {
+        padding: 0;
+        margin: 0;
+    }
+
+    .second-section {
+        display: none;
+    }
+
+    .third-section {
+        display: none;
+    }
+
+    .fourth-section {
+        display: none;
+    }
+}
+
+
 /*image Curve */
 
 .curve {
     width: 5rem;
-    position: absolute;
-    top: 40rem;
-    left: 73rem;
+    margin-left: 72rem;
+    margin-bottom: -9rem;
 }
 
 /*second section*/
@@ -205,15 +349,15 @@ p.suggest {
 .second-section {
     display: flex;
     flex-direction: row;
+    padding: 0 4rem 0 4rem;
 }
 
 img.rectangle-8 {
-    width: 35.25rem;
-    margin-left: 8rem;
+    width: 50%;
 }
 
 .meaning {
-    width: 32rem;
+    width: 50%;
     margin-left: 4rem;
     padding-top: 9rem;
 }
@@ -224,11 +368,12 @@ img.rectangle-8 {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 100%;
     padding: 10rem 2rem 8rem 2rem;
     background: linear-gradient(270deg, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 40%);
     border-radius: 2rem;
-    margin-top: 5rem;
-    margin-bottom: 1rem;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
 }
 
 .icon-1 {
@@ -249,12 +394,12 @@ img.rectangle-8 {
 .fourth-section {
     display: flex;
     flex-direction: column;
-    padding: 2rem 6rem; /* Platz oben und unten, links und rechts */
-    height: 100vh; /* Volle Höhe des Viewports */
+    padding: 2rem 4rem; /* Platz oben und unten, links und rechts */
+    width: 100%;
 }
 
 .frame-34 {
-    width: 35.25rem;
+    width: 45%;
 }
 
 .frame-34 p {
@@ -295,8 +440,6 @@ img.rectangle-8 {
 
 .age-muscle {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     padding-left: 22rem;
     padding-top: 1rem;
 }
@@ -307,8 +450,6 @@ img.rectangle-8 {
 
 .pregnancy-race {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     padding-left: 10rem;
     padding-top: 1rem;
 }
