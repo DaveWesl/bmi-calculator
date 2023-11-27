@@ -81,12 +81,14 @@ input:focus {
     padding: 7.25rem;
     padding-bottom: 0rem;
     padding-right: 3.125rem;
+    width: 70%;
 }
 
 .rectangle-6 p {
     padding-top: 0;
     padding-left: 7.25rem;
     padding-bottom: 5rem;
+    width: 60%;
 }
 
 .frame-6 {
@@ -189,7 +191,7 @@ p.suggest {
 
 @media screen and (max-width: 768px) {
     html {
-        font-size: 4px;
+        font-size: 12px;
     }
 
     body {
@@ -200,39 +202,51 @@ p.suggest {
         height: 100vh;
         display: block;
         text-align: center;
+        align-items: center;
+        justify-content: center;
     }
     
     .game-icon {
+        position: unset;
         height: 4rem;
         width: 4rem;
+        margin-top: 3rem;
     }
     
     .rectangle-6 {
         width: 100%;
         border-radius: 0 0 2rem 2rem;
         background: linear-gradient(to bottom left, rgb(213.73, 229.81, 253.94) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
-        border-bottom-right-radius: 2rem;
+        border-bottom-right-radius: 5rem;
+        position: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 20rem;
     }
-    
+
     .rectangle-6 h1 {
         margin: 0;
-        padding: 0;
+        padding: 3rem 0 2rem 0;
     }
     
     .rectangle-6 p {
         margin: 0;
         padding: 0;
+        width: 70%;
     }
     
     .frame-6 {
         display: grid;
+        text-align: start;
         grid-template-columns: repeat(2, 1fr);
-        width: 43%;
+        width: 80%;
         gap: 2rem;
         padding: 2rem;
-        margin-left: -16rem;
-        margin-top: 8rem;
-        margin-bottom: 3rem;
+        margin: 0 auto;
+        margin-top: -18rem;
         background-color: white;
         border-radius: 1rem;
         z-index: 2;
@@ -344,6 +358,11 @@ p.suggest {
     margin-bottom: -9rem;
 }
 
+@media screen and (max-width: 768px) {
+    .curve {
+        display: none;
+    }
+
 /*second section*/
 
 .second-section {
@@ -361,6 +380,11 @@ img.rectangle-8 {
     margin-left: 4rem;
     padding-top: 9rem;
 }
+
+@media screen and (max-width: 768px) {
+    .second-section {
+        display: none;
+    }
 /*third section*/
 
 .third-section {
@@ -388,6 +412,11 @@ img.rectangle-8 {
 .tipps:not(:last-child) {
     padding-right: 2rem;
 }
+
+@media screen and (max-width: 768px) {
+    .third-section {
+        display: none;
+    }
 
 /*fourth section*/
 
@@ -465,6 +494,10 @@ img.rectangle-8 {
     left: 12rem;
 }
 
+@media screen and (max-width: 768px) {
+    .fourth-section {
+        display: none;
+    }
 
 
 /*
