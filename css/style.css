@@ -5,6 +5,12 @@
     font-size: 16px;
 }
 
+@media screen and (max-width: 1000px) {
+    * {
+        font-size: 13px;
+    }
+}
+
 
 body {
     margin: 0;
@@ -260,7 +266,7 @@ p.suggest {
 
 .curve {
     width: 5rem;
-    margin-left: 72rem;
+    margin-left: 85%;
     margin-bottom: -9rem;
 }
 
@@ -482,7 +488,7 @@ img.rectangle-8 {
     margin-top: 3rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1268px) {
     .fourth-section {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
