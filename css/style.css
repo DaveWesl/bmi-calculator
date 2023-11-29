@@ -61,7 +61,6 @@ input:focus {
 /*first section*/
 
 .first-section {
-    height: 100vh;
     display: flex;
 }
 
@@ -117,7 +116,8 @@ input:focus {
     margin: 0;
 }
 
-button.metric-imperial{
+button.imperialOff, 
+button.metricOff {
     border-radius: 50%;
     border: 0.0625rem solid;    
     border-color: #D8E2E7;
@@ -127,10 +127,14 @@ button.metric-imperial{
     cursor: pointer;
 }
 
-button.metric-imperial:active {
+button.metricOn,
+button.imperialOn {
     background-color: blue;
     border: 0.5rem solid #D8E2E7;  
-    border-radius: 50% !important;  
+    border-radius: 50% !important;
+    cursor: pointer; 
+    width: 2rem;
+    height: 2rem; 
 }
 
 
@@ -146,7 +150,8 @@ button.metric-imperial:active {
     align-items: center;
 }
 
-.input-infos {
+.input-infos-1,
+.input-infos-2 {
     font-weight: bold;
     border: 0.0625rem solid rgba(216, 226, 231);
     border-radius: 0.625rem;
@@ -157,7 +162,13 @@ button.metric-imperial:active {
     display: flex;
 }
 
-.input-infos h3 {
+.frameImperial {
+    display: none;
+    padding-top: 1.20rem;
+}
+
+.input-infos-1 h3,
+.input-infos-2 h3 {
     color: rgba(52, 95, 246, 1);
     text-align: end;
 }
@@ -206,7 +217,6 @@ p.suggest {
         display: block;
     }
     .first-section {
-        height: 100vh;
         display: block;
         text-align: center;
         align-items: center;

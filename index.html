@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
   <title>Frontend Mentor | Body Mass Index Calculator</title>
@@ -28,33 +27,45 @@
       <div class="frame-6">
         <h3>Enter your details below</h3>
         <div class="metric">
-          <button class="metric-imperial"></button>
+          <button id="buttonMetric" class="metricOn" onclick="button()"></button>
             <p>Metric</p>
         </div>
         <div class="metric">
-          <button class="metric-imperial"></button>
+          <button id="buttonImperial" class="imperialOff" onclick="button()"></button>
           <p>Imperial</p>
         </div>
-        <div class="frame 2">
+        <div id="frame10">
           <label for="height">Height</label>
-          <div class="input-infos">
+          <div class="input-infos-1">
             <input type="text" name="height" id="height" value="183">
-            <h3>cm</h3>
+            <h3 class="unitHeight">cm</h3>
           </div>
         </div>
-        <div class="frame 2">
-          <label for="weigth">Weight</label>
-          <div class="input-infos">
-            <input type="text" name="weight" id="Weight" value="183">
-            <h3>cm</h3>
+        <div class="frameImperial">
+          <div class="input-infos-1">
+            <input type="text" name="heightImperial" id="heightImperial" value="11">
+            <h3 class="unitHeightImperial">in</h3>
+          </div>
+        </div>
+        <div id="frame10">
+          <label for="weight">Weight</label>
+          <div class="input-infos-2">
+            <input type="text" name="weight" id="weight" value="183">
+            <h3 class="unitWeight">kg</h3>
+          </div>
+        </div>          
+        <div class="frameImperial">
+          <div class="input-infos-2">
+            <input type="text" name="weightImperial" id="weightImperial" value="4">
+            <h3 class="unitWeightImperial">lbs</h3>
           </div>
         </div>
         <div class="frame-1">
           <div class="frame-3">
-            <p>Your BMI is...<br><h1 class="BMI">23.4</h1></p>
+            <p class="BMItext">Your BMI is...<br><h1 class="BMI">23.4</h1></p>
             
           </div>
-          <p class="suggest">Your BMI suggests you're <span class="classification">...</span>.
+          <p class="suggest">Your BMI suggests you're a<span class="classification">...</span>.
             Your ideal weight is between <span class="range">...</span>.</p>
         </div>
       </div>
@@ -161,7 +172,7 @@
       
     </div>
   </div>
-
+<script src="./js/app.js"></script>
 </body>
 
 </html>
