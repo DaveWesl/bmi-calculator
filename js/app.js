@@ -56,13 +56,13 @@ const bmiRange = document.querySelector('.range');
 
 
 inputHeight.addEventListener('input', function() {
-    inputWeight.value = inputWeight.value.replace(/[^0-9]/g, '');
+    inputHeight.value = inputHeight.value.replace(/[^0-9]/g, '');
     console.log('Wert:', inputHeight.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
 
 inputHeightImp.addEventListener('input', function() {
-    inputWeight.value = inputWeight.value.replace(/[^0-9]/g, '');
+    inputHeightImp.value = inputHeightImp.value.replace(/[^0-9]/g, '');
     console.log('Wert:', inputHeightImp.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
@@ -74,7 +74,7 @@ inputWeight.addEventListener('input', function() {
 });
 
 inputWeightImp.addEventListener('input', function() {
-    inputWeight.value = inputWeight.value.replace(/[^0-9]/g, '');
+    inputWeightImp.value = inputWeightImp.value.replace(/[^0-9]/g, '');
     console.log('Wert:', inputWeightImp.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
@@ -107,17 +107,37 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
 
     } else {
         const heightInMeter = (inputHeightValue * 0.3048) + (inputHeightValue2 * 0.0254);
-        const kilograms1 = inputWeightValue * 6.35029;
-        const kilograms2 = inputWeightValue2 * 0.453592;
-        const kilogramsSum = kilograms1 + kilograms2;
-       // bmi = kilogramsSum / (heightInMeter ** 2);
+        const kilogramsLbs = inputWeightValue * 6.35029;
+        const kilogramsSt = inputWeightValue2 * 0.453592;
+        const kilogramSum = kilogramsLbs + kilogramsSt;
+        bmi = kilogramSum / (heightInMeter ** 2);
         bmiIdeal1 = 18.5 * (heightInMeter ** 2);
+        const weightLbs = bmiIdeal1 * 2.207;
+        const weightSt = Math.floor(weightLbs / 14);
+        const remainingLbs = weightLbs % 14;
         bmiIdeal2 = 24.9 * (heightInMeter ** 2);
+        const weightLbs2 = bmiIdeal2 * 2.20462;
+        const weightSt2 = Math.floor(weightLbs2 / 14);
+        const remainingLbs2 = weightLbs2 % 14;
         if(bmi <= 99 && bmi >= 1){
             bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
         } else {
             bmiNumber.innerHTML = '0';
     }   
+        if(bmi < 18.5 && bmi >= 1){
+            bmiClassification.innerHTML = 'Underweight';
+            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
+        } if(bmi >= 18.5 && bmi <= 24.9){
+            bmiClassification.innerHTML = 'Healthy weight';
+            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
+        } if(bmi >= 25 && bmi <= 29.9){
+            bmiClassification.innerHTML = 'Overweight';
+            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
+        } if(bmi >= 30 && bmi <= 99){
+            bmiClassification.innerHTML = 'Obese';
+            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
+        } 
+        console.log(weightSt,remainingLbs,weightSt2,remainingLbs2)
 }};
 
 /*- Underweight: BMI less than 18.5
