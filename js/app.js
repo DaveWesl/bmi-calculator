@@ -85,25 +85,23 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
         bmi = inputWeightValue / (heightInMeter ** 2);
         bmiIdeal1 = 18.5 * (heightInMeter ** 2);
         bmiIdeal2 = 24.9 * (heightInMeter ** 2);
-        if(bmi <= 99 && bmi >= 1){
+        if (bmi <= 99 && bmi >= 1) {
             bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
+        
+            if (bmi < 18.5) {
+                bmiClassification.innerHTML = 'Underweight';
+            } else if (bmi <= 24.9) {
+                bmiClassification.innerHTML = 'Healthy weight';
+            } else if (bmi <= 29.9) {
+                bmiClassification.innerHTML = 'Overweight';
+            } else {
+                bmiClassification.innerHTML = 'Obese';
+            }
+        
+            bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
         } else {
             bmiNumber.innerHTML = '0';
         }
-
-        if(bmi < 18.5 && bmi >= 1){
-            bmiClassification.innerHTML = 'Underweight';
-            bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
-        } if(bmi >= 18.5 && bmi <= 24.9){
-            bmiClassification.innerHTML = 'Healthy weight';
-            bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
-        } if(bmi >= 25 && bmi <= 29.9){
-            bmiClassification.innerHTML = 'Overweight';
-            bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
-        } if(bmi >= 30 && bmi <= 99){
-            bmiClassification.innerHTML = 'Obese';
-            bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
-        } 
 
     } else {
         const heightInMeter = (inputHeightValue * 0.3048) + (inputHeightValue2 * 0.0254);
@@ -111,60 +109,39 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
         const kilogramsSt = inputWeightValue2 * 0.453592;
         const kilogramSum = kilogramsLbs + kilogramsSt;
         bmi = kilogramSum / (heightInMeter ** 2);
+        const roundedBMI = Math.round(bmi * 10) / 10;
         bmiIdeal1 = 18.5 * (heightInMeter ** 2);
-        const weightLbs = bmiIdeal1 * 2.207;
+        const weightLbs = bmiIdeal1 * 2.20462;
         const weightSt = Math.floor(weightLbs / 14);
         const remainingLbs = weightLbs % 14;
         bmiIdeal2 = 24.9 * (heightInMeter ** 2);
         const weightLbs2 = bmiIdeal2 * 2.20462;
         const weightSt2 = Math.floor(weightLbs2 / 14);
         const remainingLbs2 = weightLbs2 % 14;
-        if(bmi <= 99 && bmi >= 1){
-            bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
+        if (bmi < 99 && bmi >= 1) {
+            bmiNumber.innerHTML = roundedBMI;
+            if (bmi >= 29.95){
+                bmiClassification.innerHTML = 'Obese';
+            }
+            if (bmi >= 24.95 && bmi <= 29.94) {
+                bmiClassification.innerHTML = 'Overweight';
+            }
+            if (bmi >=18.45 && bmi <= 24.94 ) {
+                bmiClassification.innerHTML = 'Healthy weight';                
+            }
+            if (bmi <= 18.44){
+                bmiClassification.innerHTML = 'Underweight';
+            };
+            bmiRange.innerHTML = `${Math.round(weightSt)}st ${Math.round(remainingLbs)}lbs - ${Math.round(weightSt2)}st ${Math.round(remainingLbs2)}lbs`;
+
+
         } else {
             bmiNumber.innerHTML = '0';
-    }   
-        if(bmi < 18.5 && bmi >= 1){
-            bmiClassification.innerHTML = 'Underweight';
-            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
-        } if(bmi >= 18.5 && bmi <= 24.9){
-            bmiClassification.innerHTML = 'Healthy weight';
-            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
-        } if(bmi >= 25 && bmi <= 29.9){
-            bmiClassification.innerHTML = 'Overweight';
-            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
-        } if(bmi >= 30 && bmi <= 99){
-            bmiClassification.innerHTML = 'Obese';
-            bmiRange.innerHTML = `${weightSt.toFixed(0)}st ${remainingLbs.toFixed(0)}lbs - ${weightSt2.toFixed(0)}st ${remainingLbs2.toFixed(0)}lbs`;
-        } 
-        console.log(weightSt,remainingLbs,weightSt2,remainingLbs2)
+        }
 }};
 
 /*- Underweight: BMI less than 18.5
 - Classifaction: Healthy weight: Range: BMI 18.5 to 24.9
 - Overweight: BMI 25 to 29.9
 - Obese: BMI 30 or greater 
-
-function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWeightValue2){
-    if(buttonMetric.classList.contains('metricOn')){
-        const heightInMeter = inputHeightValue / 100; 
-        bmi = inputWeightValue / (heightInMeter ** 2);
-        if(bmi <= 99 && bmi >= 1){
-            bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
-        } else {
-            bmiNumber.innerHTML = '0';
-        }
-    } else {
-        const heightInMeter = (inputHeightValue * 0.3048) + (inputHeightValue2 * 0.0254);
-        const kilograms1 = inputWeightValue * 6.35029;
-        const kilograms2 = inputWeightValue2 * 0.453592;
-        bmi = (kilograms1 + kilograms2) / (heightInMeter ** 2);
-        if(bmi <= 99 && bmi >= 1){
-            bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
-        } else {
-            bmiNumber.innerHTML = '0';
-        console.log(`${bmi}`);
-    }   
-}};
-
 */
