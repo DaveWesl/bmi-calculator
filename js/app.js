@@ -151,8 +151,34 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
         }
 }};
 
-/*- Underweight: BMI less than 18.5
-- Classifaction: Healthy weight: Range: BMI 18.5 to 24.9
-- Overweight: BMI 25 to 29.9
-- Obese: BMI 30 or greater 
-*/
+//Animation Logos-third-section
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Ziel-Divs auswählen
+    var einfliegenDivs = document.querySelectorAll('.einfliegen');
+  
+    // Funktion für das Einfliegen, die vom IntersectionObserver aufgerufen wird
+    function handleIntersection(entries, observer) {
+      entries.forEach(entry => {
+        console.log(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          // Iteriere durch jedes Element in der NodeList
+          einfliegenDivs.forEach(div => {
+            div.classList.add('eingeblendet');
+          });
+  
+          // Observer entfernt das Ziel-Element automatisch nach dem Eintritt
+          // Wenn das Element erneut beobachtet werden soll, füge es hier wieder hinzu
+          observer.unobserve(entry.target);
+        }
+      });
+    }
+  
+    // IntersectionObserver erstellen
+    var observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+  
+    // Ziel-Div dem Observer hinzufügen
+    var thirdSection = document.querySelector('.third-section');
+    observer.observe(thirdSection);
+  });
+  
