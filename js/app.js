@@ -1,6 +1,3 @@
-
-
-
 //Buttons
 const buttonMetric = document.getElementById('buttonMetric');
 const buttonImperial = document.getElementById('buttonImperial');
@@ -53,51 +50,62 @@ var bmiNumber = document.querySelector('.BMI');
 const bmiText = document.querySelector('.BMItext');
 const bmiClassification = document.querySelector('.classification');
 const bmiRange = document.querySelector('.range');
+const frameStart = document.querySelector('.frame-1-1');
+const frameBmi = document.querySelector('.frame-1');
+const suggest = document.querySelector('.suggest');
 
 
 inputHeight.addEventListener('input', function() {
     inputHeight.value = inputHeight.value.replace(/[^0-9]/g, '');
+    inputHeight.style.color = 'rgba(37, 51, 71, 1)';
     console.log('Wert:', inputHeight.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
 
 inputHeightImp.addEventListener('input', function() {
     inputHeightImp.value = inputHeightImp.value.replace(/[^0-9]/g, '');
+    inputHeightImp.style.color = 'rgba(37, 51, 71, 1)';
     console.log('Wert:', inputHeightImp.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
 
 inputWeight.addEventListener('input', function() {
     inputWeight.value = inputWeight.value.replace(/[^0-9]/g, '');
+    inputWeight.style.color = 'rgba(37, 51, 71, 1)';
     console.log('Wert:', inputWeight.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
 
 inputWeightImp.addEventListener('input', function() {
     inputWeightImp.value = inputWeightImp.value.replace(/[^0-9]/g, '');
+    inputWeightImp.style.color = 'rgba(37, 51, 71, 1)';
     console.log('Wert:', inputWeightImp.value);
     calcBmi(inputHeight.value, inputWeight.value, inputHeightImp.value, inputWeightImp.value);
 });
 
 function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWeightValue2){
+    frameStart.style.display = 'none';
+    frameBmi.style.display = 'grid';
     if(buttonMetric.classList.contains('metricOn')){
         const heightInMeter = inputHeightValue / 100; 
-        bmi = inputWeightValue / (heightInMeter ** 2);
-        bmiIdeal1 = 18.5 * (heightInMeter ** 2);
-        bmiIdeal2 = 24.9 * (heightInMeter ** 2);
+        const bmi = inputWeightValue / (heightInMeter ** 2);
+        const bmiRounded = bmi.toFixed(1);
+        const bmiIdeal1 = 18.5 * (heightInMeter ** 2);
+        const bmiIdeal2 = 24.9 * (heightInMeter ** 2);
         if (bmi <= 99 && bmi >= 1) {
-            bmiNumber.innerHTML = `${bmi.toFixed(1)}`;
+            bmiNumber.innerHTML = bmiRounded;
         
-            if (bmi < 18.5) {
-                bmiClassification.innerHTML = 'Underweight';
-            } else if (bmi <= 24.9) {
-                bmiClassification.innerHTML = 'Healthy weight';
-            } else if (bmi <= 29.9) {
-                bmiClassification.innerHTML = 'Overweight';
+            if (bmiRounded < 18.5) {
+                bmiClassification.innerHTML = 'a Underweight';
+            } else if (bmiRounded <= 24.9) {
+                bmiClassification.innerHTML = 'a Healthy weight';
+            } else if (bmiRounded <= 29.9) {
+                bmiClassification.innerHTML = 'a Overweight';
             } else {
                 bmiClassification.innerHTML = 'Obese';
             }
         
+            suggest.style.display = 'block';
             bmiRange.innerHTML = `${bmiIdeal1.toFixed(1)}kg - ${bmiIdeal2.toFixed(1)}kg`;
         } else {
             bmiNumber.innerHTML = '0';
@@ -108,30 +116,33 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
         const kilogramsLbs = inputWeightValue * 6.35029;
         const kilogramsSt = inputWeightValue2 * 0.453592;
         const kilogramSum = kilogramsLbs + kilogramsSt;
-        bmi = kilogramSum / (heightInMeter ** 2);
+        const bmi = kilogramSum / (heightInMeter ** 2);
         const roundedBMI = Math.round(bmi * 10) / 10;
-        bmiIdeal1 = 18.5 * (heightInMeter ** 2);
+
+        const bmiIdeal1 = 18.5 * (heightInMeter ** 2);
         const weightLbs = bmiIdeal1 * 2.20462;
         const weightSt = Math.floor(weightLbs / 14);
         const remainingLbs = weightLbs % 14;
-        bmiIdeal2 = 24.9 * (heightInMeter ** 2);
+        
+        const bmiIdeal2 = 24.9 * (heightInMeter ** 2);
         const weightLbs2 = bmiIdeal2 * 2.20462;
         const weightSt2 = Math.floor(weightLbs2 / 14);
         const remainingLbs2 = weightLbs2 % 14;
         if (bmi < 99 && bmi >= 1) {
             bmiNumber.innerHTML = roundedBMI;
-            if (bmi >= 29.95){
+            if (roundedBMI >= 30){
                 bmiClassification.innerHTML = 'Obese';
             }
-            if (bmi >= 24.95 && bmi <= 29.94) {
-                bmiClassification.innerHTML = 'Overweight';
+            if (roundedBMI >= 25 && bmi <= 29.9) {
+                bmiClassification.innerHTML = 'a Overweight';
             }
-            if (bmi >=18.45 && bmi <= 24.94 ) {
-                bmiClassification.innerHTML = 'Healthy weight';                
+            if (roundedBMI >=18.5 && bmi <= 24.9 ) {
+                bmiClassification.innerHTML = 'a Healthy weight';                
             }
-            if (bmi <= 18.44){
-                bmiClassification.innerHTML = 'Underweight';
+            if (roundedBMI < 18.5){
+                bmiClassification.innerHTML = 'a Underweight';
             };
+            suggest.style.display = 'block';
             bmiRange.innerHTML = `${Math.round(weightSt)}st ${Math.round(remainingLbs)}lbs - ${Math.round(weightSt2)}st ${Math.round(remainingLbs2)}lbs`;
 
 
