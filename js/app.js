@@ -119,12 +119,12 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
         const bmi = kilogramSum / (heightInMeter ** 2);
         const roundedBMI = Math.round(bmi * 10) / 10;
 
-        const bmiIdeal1 = 18.5 * (heightInMeter ** 2);
+        const bmiIdeal1 = 18.5135 * (heightInMeter ** 2);
         const weightLbs = bmiIdeal1 * 2.20462;
         const weightSt = Math.floor(weightLbs / 14);
         const remainingLbs = weightLbs % 14;
         
-        const bmiIdeal2 = 24.9 * (heightInMeter ** 2);
+        const bmiIdeal2 = 24.8788 * (heightInMeter ** 2);
         const weightLbs2 = bmiIdeal2 * 2.20462;
         const weightSt2 = Math.floor(weightLbs2 / 14);
         const remainingLbs2 = weightLbs2 % 14;
@@ -144,6 +144,7 @@ function calcBmi(inputHeightValue, inputWeightValue, inputHeightValue2, inputWei
             };
             suggest.style.display = 'block';
             bmiRange.innerHTML = `${Math.round(weightSt)}st ${Math.round(remainingLbs)}lbs - ${Math.round(weightSt2)}st ${Math.round(remainingLbs2)}lbs`;
+            // bmiRange.innerHTML = `${weightSt} st ${remainingLbs}lbs - ${weightSt2}st ${remainingLbs2}lbs`;
 
 
         } else {
