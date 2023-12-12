@@ -642,7 +642,7 @@ img.rectangle-8 {
     
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 469px) {
     .fourth-section {
         display: flex;
         flex-direction: column;
