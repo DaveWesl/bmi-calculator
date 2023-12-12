@@ -11,7 +11,6 @@
     }
 }
 
-
 body {
     margin: 0;
     padding: 0 1.5rem 0rem 1.5rem;
@@ -369,7 +368,7 @@ img.rectangle-8 {
         }
     }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 550px) {
     
         .second-section {
             display: flex;
@@ -466,7 +465,7 @@ img.rectangle-8 {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 550px) {
     .third-section {
         display: flex;
         flex-direction: column;
@@ -643,7 +642,7 @@ img.rectangle-8 {
     
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 550px) {
     .fourth-section {
         display: flex;
         flex-direction: column;
