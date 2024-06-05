@@ -93,6 +93,7 @@ input:focus {
     padding-left: 7.25rem;
     padding-bottom: 5rem;
     width: 60%;
+    font-size: 1.5rem;
 }
 
 .frame-6 {
@@ -250,10 +251,8 @@ p.suggest {
     margin: 0;
 }
 
-@media screen and (max-width: 768px) {
-    html {
-        font-size: 12px;
-    }
+@media screen and (max-width: 900px) {
+    
 
     body {
         margin: 0;
@@ -315,6 +314,17 @@ p.suggest {
     }
 }
 
+@media screen and (max-width: 400px) {
+    .first-section h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+    }
+
+}
+
 
 /*image Curve */
 
@@ -324,7 +334,7 @@ p.suggest {
     margin-bottom: -9rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .curve {
         display: none;
     }
@@ -334,7 +344,12 @@ p.suggest {
 .second-section {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     padding: 0 4rem 0 4rem;
+}
+
+.second-section p{
+    font-size: 1.5rem;
 }
 
 img.rectangle-8 {
@@ -342,46 +357,29 @@ img.rectangle-8 {
 }
 
 .meaning {
-    width: 50%;
+    width: 40%;
     margin-left: 4rem;
     padding-top: 9rem;
 }
 
-@media screen and (max-width: 768px) {
-    
-        .second-section {
-            display: flex;
-            flex-direction: row;
-            margin-top: 10rem;
-            padding: 0rem 0rem 0 0rem;
-        }
-        
-        img.rectangle-8 {
-            width: 50%;
-        }
-        
-        .meaning {
-            width: 50%;
-            margin-left: 5rem;
-            margin-right: 5rem;
-            padding-top: 0rem;
-        }
-    }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 900px) {
     
         .second-section {
             display: flex;
             flex-direction: column;
+            align-items: center;
             margin-top: 10rem;
             padding: 0rem 0rem 0 0rem;
         }
         
         img.rectangle-8 {
-            width: 100%;
+            width: 70%;
+            order: 1;
         }
         
         .meaning {
+            order: 0;
             width: 100%;
             margin: auto;
             padding-left: 8%;
@@ -395,7 +393,7 @@ img.rectangle-8 {
 .third-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
     padding: 10rem 2rem 8rem 2rem;
@@ -403,6 +401,11 @@ img.rectangle-8 {
     border-radius: 2rem;
     margin-top: 10rem;
     margin-bottom: 6rem;
+    gap: 2rem;
+}
+
+.third-section p{
+    font-size: 1.5rem;
 }
 
 .icon-1 {
@@ -425,18 +428,14 @@ img.rectangle-8 {
     transform: translateX(0);
   }
 
-.tipps:not(:last-child) {
-    padding-right: 2rem;
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     .third-section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: self-start;
         width: 100%;
-        padding: 10rem 2rem 8rem 2rem;
+        padding: 10rem 5rem 8rem 5rem;
         background: linear-gradient(180deg, rgb(213.73, 229.81, 253.94, 0.5) 0%, rgba(213.73, 142, 144, 0) 100%);
         border-radius: 2rem;
         margin-top: 7rem;
@@ -494,6 +493,10 @@ img.rectangle-8 {
 
 .frame-34 {
     width: 55%;
+}
+
+.frame-34 p{
+    font-size: 1.5rem;
 }
 
 .frame-34 p {
