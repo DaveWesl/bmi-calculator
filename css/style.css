@@ -401,13 +401,13 @@ img.rectangle-8 {
     padding: 10rem 2rem 8rem 2rem;
     background: linear-gradient(180deg, rgb(213.73, 229.81, 253.94, 0.5) 0%, rgba(213.73, 251.53, 253.94, 0) 100%);
     border-radius: 2rem;
-    margin-top: 7rem;
-    margin-bottom: 3rem;
+    margin-top: 10rem;
+    margin-bottom: 6rem;
 }
 
 .icon-1 {
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
+    height: 5rem;
 }
 
 .tipps {
@@ -489,6 +489,7 @@ img.rectangle-8 {
     padding: 2rem 4rem; /* Platz oben und unten, links und rechts */
     width: 100%;
     gap: 2rem;
+    margin-bottom: 3rem;
 }
 
 .frame-34 {
@@ -500,15 +501,16 @@ img.rectangle-8 {
 }
 
 .icon-2 {
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 .frame-7 {
-    width: 33%;
-    box-shadow: 1rem 1.3rem 1rem 0.2rem rgba(37, 51, 71, 0.2);
+    width: 30%;
+    box-shadow: 0.5rem 0.5rem 0.5rem 0.2rem rgba(37, 51, 71, 0.2);
     border-radius: 1rem;
     padding: 1.5rem;
+    border: 0.5px black solid;
 }
 
 .icon-2-container {
@@ -527,9 +529,9 @@ img.rectangle-8 {
 }
 
 .frame-7-1 {
-    margin-left: 60%;
-    margin-top: -30%;
-    max-height: 15rem;
+    margin-left: 67%;
+    margin-top: -24%;
+    max-height: 12rem;
 }
 
 .frame-7-2 {
@@ -552,7 +554,12 @@ img.rectangle-8 {
     margin-left: 30%;
     margin-top: 3rem;
 }
-
+@media screen and (max-width: 1480px) {
+    .frame-7-1 {
+        margin-top: -27%;
+        max-height: 13rem;
+    }
+}
 @media screen and (max-width: 1268px) {
     .fourth-section {
         display: grid;
